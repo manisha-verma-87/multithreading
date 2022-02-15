@@ -1,0 +1,15 @@
+A semaphore is a signaling mechanism and a thread that is waiting on a semaphore can be signaled by another thread.
+
+There are two types of semaphores: Binary Semaphores and Counting Semaphores
+
+    Binary Semaphores: They can only be either 0 or 1. They are also known as mutex locks, as the locks can provide mutual exclusion. 
+    All the processes can share the same mutex semaphore that is initialized to 1. Then, a process has to wait until the lock becomes 0. 
+    Then, the process can make the mutex semaphore 1 and start its critical section. When it completes its critical section, it can 
+    reset the value of mutex semaphore to 0 and some other process can enter its critical section.
+    
+    Counting Semaphores: They can have any value and are not restricted over a certain domain. They can be used to control access to a 
+    resource that has a limitation on the number of simultaneous accesses. The semaphore can be initialized to the number of instances 
+    of the resource. Whenever a process wants to use that resource, it checks if the number of remaining instances is more than zero, 
+    i.e., the process has an instance available. Then, the process can enter its critical section thereby decreasing the value of the 
+    counting semaphore by 1. After the process is over with the use of the instance of the resource, it can leave the critical section 
+    thereby adding 1 to the number of available instances of the resource.
